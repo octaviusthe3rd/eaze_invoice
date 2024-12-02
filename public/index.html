@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Eazy Invoice: Online Invoice Generator </title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        
+        </style>
+</head>
+<body>
+    <div class="container">
+        <div class="invoice-header">
+            <h1>Eazy Invoice</h1>
+            <p>Create professional invoices with ease</p>
+        </div>
+        
+        <form id="invoiceForm" class="invoice-form">
+            <div class="form-grid">
+                <div class="form-column">
+                    <div class="form-group">
+                        <label for="date">Invoice Date</label>
+                        <input type="date" id="date" name="date" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="from">Sender Details</label>
+                        <input type="text" id="from" name="from" placeholder="Your Company Name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="to">Client Details</label>
+                        <input type="text" id="to" name="to" placeholder="Client Name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="logo">Logo URL</label>
+                        <input type="url" id="logo" name="logo" placeholder="Optional company logo URL">
+                    </div>
+                </div>
+                
+                <div class="form-column">
+                    <div class="form-group">
+                        <label for="due_date">Due Date</label>
+                        <input type="date" id="due_date" name="due_date" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="tax">Tax Rate (%)</label>
+                        <input type="number" id="tax" name="tax" placeholder="Tax percentage" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="amount_paid">Amount Paid</label>
+                        <input type="number" id="amount_paid" name="amount_paid" placeholder="Paid amount" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="locale">Locale</label>
+                        <input type="text" id="locale" name="locale" value="en-us" required>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="items-section">
+                <h3>Invoice Items</h3>
+                <div id="items" class="items-container">
+                    <div class="item">
+                        <div class="form-group">
+                            <label>Item Name</label>
+                            <input type="text" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Unit Cost</label>
+                            <input type="number" name="unit_cost" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Quantity</label>
+                            <input type="number" name="quantity" required>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="item-controls">
+                    <button type="button" id="addItem" class="btn btn-secondary">
+                        <span>+</span> Add Item
+                    </button>
+                </div>
+            </div>
+            
+            <div class="form-actions">
+                <button type="submit" class="btn btn-primary">Generate Invoice</button>
+            </div>
+        </form>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
